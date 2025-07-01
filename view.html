@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reading Notes</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      line-height: 1.6;
+      background: #fdfdfd;
+    }
+    h1, h2, h3 { border-bottom: 1px solid #ccc; }
+    pre { background: #f0f0f0; padding: 1em; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1 id="title">📘 Loading...</h1>
+  <div id="content">Loading markdown...</div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get('file');
+
+    if (!file) {
+      document.getElementById('content').innerHTML = '<p>Please specify a markdown file using <code>?file=FILENAME</code> in the URL.</p>';
+    } else {
+      const rawUrl = `https://raw.githubusercontent.com/dylanhcode/reading-notes/main/docs/${file}.md`;
+      fetch(rawUrl)
+        .then(response => {
+          if (!response.ok) throw new Error("File not found");
+          return response.text();
+        })
+        .then(md => {
+          document.title = `${file} | Reading Notes`;
+          document.getElementById('title').textContent = `📘 ${file}`;
+          document.getElementById('content').innerHTML = marked.parse(md);
+        })
+        .catch(err => {
+          document.getElementById('content').innerHTML = `<p style="color:red;">Error loading file: ${err.message}</p>`;
+        });
+    }
+  </script>
+</body>
+</html>
