@@ -32,14 +32,33 @@ A brief summary of the book in 2–5 sentences. What is the core idea? What’s 
     - build a system that supports a **single user** => **millions of users**
 
 - Single server setup
-    - 
+    - Web app:
+        - backend: Java, Python, etc
+            - handle business logic, storage, etc.
+        - frontend: HTML, JavaScript
+            - presentation
+    - Mobile app:
+        - communication: HTTP
+        - API response format: most commonly used JSON
+
+    <div style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/dylanhcode/reading-notes/main/images/image0.png" alt="Single Server Request Flow Diagram" style="width:600px;"/>
+    </div>
+
+- Database
+    - with increasing users, we need multiple servers: one for web/mobile traffic, the other for the DB. 
+        - Separating web/mobile traffic (web tier) and database (data tier) servers allows them to be scaled independently.
+
+    <div style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/dylanhcode/reading-notes/main/images/image1.png" alt="Database Diagram" style="width:600px;"/>
+    </div>
 
 - Load balancer (Web Tier)
     - Users/clients connect to the public IP of the load balancer directly => load balancer connects to the web servers via private IPs* (*: IP addr only reachable between servers in the same network).
         - web servers are unreachable directly by clients for better security.
 
     <div style="text-align: center;">
-    <img src="https://raw.githubusercontent.com/dylanhcode/reading-notes/main/images/image0.png" alt="Load Balancer Diagram" style="width:600px;"/>
+    <img src="https://raw.githubusercontent.com/dylanhcode/reading-notes/main/images/image2.png" alt="Load Balancer Diagram" style="width:600px;"/>
     </div>
 
     - Benefits:
