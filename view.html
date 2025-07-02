@@ -28,7 +28,7 @@
     if (!file) {
       document.getElementById('content').innerHTML = '<p>Please specify a markdown file using <code>?file=FILENAME</code> in the URL.</p>';
     } else {
-      const rawUrl = `https://raw.githubusercontent.com/dylanhcode/reading-notes/main/docs/${file}.md`;
+      const rawUrl = `https://github.com/dylanhcode/reading-notes/blob/main/docs/${file}.md`;
       fetch(rawUrl)
         .then(response => {
           if (!response.ok) throw new Error("File not found");
