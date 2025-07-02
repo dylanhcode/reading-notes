@@ -39,7 +39,7 @@ A brief summary of the book in 2–5 sentences. What is the core idea? What’s 
         - web servers are unreachable directly by clients for better security.
 
     <div style="text-align: center;">
-    <img src="../images/image0.png" alt="Load Balancer Diagram" style="width:600px;"/>
+    <img src="https://raw.githubusercontent.com/dylanhcode/reading-notes/main/images/image0.png" alt="Load Balancer Diagram" style="width:600px;"/>
     </div>
 
     - Benefits:
