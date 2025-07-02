@@ -29,14 +29,14 @@ A brief summary of the book in 2–5 sentences. What is the core idea? What’s 
 ### Chapter 1: Scale From Zero to Millions of Users
 
 
-<details open>
+<details>
   <summary><strong>Goal</strong></summary>
 
 - build a system that supports a **single user** => **millions of users**
 
 </details>
 
-<details open>
+<details>
   <summary><strong>Single server setup</strong></summary>
 
 - Web app:
@@ -55,7 +55,7 @@ A brief summary of the book in 2–5 sentences. What is the core idea? What’s 
 </details>
 
 
-<details open>
+<details>
   <summary><strong>Database</strong></summary>
 
 - with increasing users, we need multiple servers: one for web/mobile traffic, the other for the DB.  
@@ -67,7 +67,7 @@ A brief summary of the book in 2–5 sentences. What is the core idea? What’s 
 
 </details>
 
-<details open>
+<details>
   <summary><strong>Load balancer (Web Tier)</strong></summary>
 
 - Users/clients connect to the public IP of the load balancer directly => load balancer connects to the web servers via private IPs* (*: IP addr only reachable between servers in the same network).
@@ -85,7 +85,7 @@ A brief summary of the book in 2–5 sentences. What is the core idea? What’s 
 
 </details>
 
-<details open>
+<details>
   <summary><strong>Database replication (Data Tier)</strong></summary>
 </details>
 

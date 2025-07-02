@@ -38,6 +38,8 @@
           document.title = `${file} | Reading Notes`;
           document.getElementById('title').textContent = `📘 ${file}`;
           document.getElementById('content').innerHTML = marked.parse(md);
+          // Force all <details> elements open after content is loaded
+            document.querySelectorAll("details").forEach(detail => detail.setAttribute("open", "true"));
         })
         .catch(err => {
           document.getElementById('content').innerHTML = `<p style="color:red;">Error loading file: ${err.message}</p>`;
