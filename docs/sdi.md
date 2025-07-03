@@ -1,4 +1,4 @@
-# System Design Interview - An Insider's Guide
+# System Design Interview - An Insider's Guide (ed2)
 **Status**: 🕓 In Progress  
 
 ---
@@ -64,6 +64,27 @@ A brief summary of the book in 2–5 sentences. What is the core idea? What’s 
 <p align="center">
     <img src="https://raw.githubusercontent.com/dylanhcode/reading-notes/main/images/image1.png" alt="Database Diagram" width="600" style="max-width:100%;"/>
 </p>
+
+- **Which database to use?**
+    - Relational DB
+        - relational database management system (RDBMS) or SQL database
+        - e.g. MySQL, Oracle DB, PostgreSQL, etc.
+        - relational DB represent and store data in tables and rows
+        - can perform join operations
+    - Non-relational DB
+        - NoSQL database
+        - e.g. CounchDB, Neo4j, Cassandra, HBase, Amazon DynamoDB, etc.
+        - 4 Categories
+            - key-value stores
+            - graph stores
+            - column stores
+            - document stores
+        - Join operations not supported
+    - Non-relational DB might be the right choice if:
+        - requires super-low latency
+        - data are unstructed, or do not have any relational data (data that is organized into tables / also called relations)
+        - only need to serialize and deserialize data (text-based data format such as JSON, XML, YAML, etc)
+
 
 </details>
 
